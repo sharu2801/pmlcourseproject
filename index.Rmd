@@ -27,7 +27,7 @@ library(rpart)
  modFit <- train(trainData$classe ~.,data = trainData,method="rpart")
 ```
 
-Then used random forest method with cross validation of 8-fold and sample sizes of 10304 is used to achieve and accuracy of 0.956 with 100% accuracy in predicting the 20 test cases with out of sample error of 3% using confusionMatrix
+Then used random forest method with cross validation of 8-fold and sample sizes of 10304 is used to achieve and accuracy of 0.966 with 100% accuracy in predicting the 20 test cases with out of sample error of 3% using confusionMatrix
 ```{r}
 library(randomForest)
 modFit <- train(trainData$classe ~.,data = trainData,method="rf", preProcess="pca", trControl = trainControl(method = "cv", number = 8), allowParallel = T)
